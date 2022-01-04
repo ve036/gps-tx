@@ -1,1 +1,3330 @@
-[]
+[
+    {
+        "id": "a4e498ec.1c79d8",
+        "type": "tab",
+        "label": "mqtt",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "4a3b0ccfd7115cd5",
+        "type": "subflow",
+        "name": "PRNs",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "e5a42049599454b8"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1260,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "e59d1806fc384d90",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "b50fbb45.a8d5d8",
+        "type": "mqtt-broker",
+        "name": "mosquitte-home",
+        "broker": "ve036.mydns.jp",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "2b07fbe7.228374",
+        "type": "serial-port",
+        "serialport": "/dev/ttyS0",
+        "serialbaud": "57600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "a298579ae5a0791d",
+        "type": "mqtt-broker",
+        "name": "8sub",
+        "broker": "210.203.214.250",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "344f5743cbb03f39",
+        "type": "ui_tab",
+        "name": "座標",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "651254a38099f3bf",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "Arial,Arial,Helvetica,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "Arial,Arial,Helvetica,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED ダッシュボード",
+            "hideToolbar": "false",
+            "allowSwipe": "menu",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "YYYY/MM/DD",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "194c659a671041ea",
+        "type": "ui_group",
+        "name": "GPS　DATA",
+        "tab": "344f5743cbb03f39",
+        "order": 1,
+        "disp": false,
+        "width": 14,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "0da5b2bc238636de",
+        "type": "ui_tab",
+        "name": "取得座標",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f884ebadf98bd57b",
+        "type": "ui_group",
+        "name": "取得座標",
+        "tab": "0da5b2bc238636de",
+        "order": 1,
+        "disp": true,
+        "width": 10,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "71877a2fa361e1f3",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "3e0f4abb06-certificate.pem.crt",
+        "keyname": "3e0f4abb06-private.pem.key",
+        "caname": "AmazonRootCA1.pem",
+        "servername": "",
+        "verifyservercert": true,
+        "alpnprotocol": ""
+    },
+    {
+        "id": "42b847da5711c912",
+        "type": "mqtt-broker",
+        "name": "AWS",
+        "broker": "a17jm6cbfebqgo-ats.iot.us-west-2.amazonaws.com",
+        "port": "8883",
+        "tls": "71877a2fa361e1f3",
+        "clientid": "",
+        "usetls": true,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "3435817a.ae655e",
+        "type": "mqtt out",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "topic": "owntracks/GPS/pi",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b50fbb45.a8d5d8",
+        "x": 1770,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "ffdb6d3a.0cb2",
+        "type": "debug",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "6b1d713b.6ef3a8",
+        "type": "catch",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 760,
+        "y": 420,
+        "wires": [
+            [
+                "203f0084.0712a8"
+            ]
+        ]
+    },
+    {
+        "id": "203f0084.0712a8",
+        "type": "debug",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "7369bfad.c3616",
+        "type": "exec",
+        "z": "a4e498ec.1c79d8",
+        "command": "sudo service gpsd stop",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "true",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 380,
+        "y": 520,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "f68df806.ba0c78",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 520,
+        "wires": [
+            [
+                "7369bfad.c3616"
+            ]
+        ]
+    },
+    {
+        "id": "6106b4fa.0da25c",
+        "type": "exec",
+        "z": "a4e498ec.1c79d8",
+        "command": "sudo service gpsd restart",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 390,
+        "y": 320,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "a6659301.0b61c",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 320,
+        "wires": [
+            [
+                "6106b4fa.0da25c"
+            ]
+        ]
+    },
+    {
+        "id": "87a7639c.f9f2a",
+        "type": "ping",
+        "z": "a4e498ec.1c79d8",
+        "mode": "timed",
+        "name": "",
+        "host": "ve036.mydns.jp",
+        "timer": "20",
+        "inputs": 0,
+        "x": 100,
+        "y": 1240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "653e5848.47cc38",
+        "type": "exec",
+        "z": "a4e498ec.1c79d8",
+        "command": "gpsd -N udp://*:29998",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 1000,
+        "y": 860,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "549119e9.baf8f8",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 780,
+        "y": 860,
+        "wires": [
+            [
+                "653e5848.47cc38"
+            ]
+        ]
+    },
+    {
+        "id": "d581a25a.bcaa9",
+        "type": "exec",
+        "z": "a4e498ec.1c79d8",
+        "command": "gpsctl -c 0.5 /dev/ttyS0",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 1000,
+        "y": 740,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "a62e7850.502e48",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "3",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 780,
+        "y": 740,
+        "wires": [
+            [
+                "d581a25a.bcaa9"
+            ]
+        ]
+    },
+    {
+        "id": "2fdc8215.c7659e",
+        "type": "exec",
+        "z": "a4e498ec.1c79d8",
+        "command": "sudo reboot",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 350,
+        "y": 900,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "c0f8fa1.339c008",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 900,
+        "wires": [
+            [
+                "2fdc8215.c7659e"
+            ]
+        ]
+    },
+    {
+        "id": "32f9c907.8b22c6",
+        "type": "exec",
+        "z": "a4e498ec.1c79d8",
+        "command": "sh /home/pi/gps115200.sh",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 1010,
+        "y": 980,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "7dd88836.c29838",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 780,
+        "y": 1040,
+        "wires": [
+            [
+                "c2c36e76.5db8c"
+            ]
+        ]
+    },
+    {
+        "id": "e29a95e8.a7d118",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 780,
+        "y": 980,
+        "wires": [
+            [
+                "32f9c907.8b22c6"
+            ]
+        ]
+    },
+    {
+        "id": "8c09c10c.40467",
+        "type": "exec",
+        "z": "a4e498ec.1c79d8",
+        "command": "sudo shutdown -h now",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 380,
+        "y": 800,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "e79ebe40.eafd6",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 800,
+        "wires": [
+            [
+                "8c09c10c.40467"
+            ]
+        ]
+    },
+    {
+        "id": "c2c36e76.5db8c",
+        "type": "exec",
+        "z": "a4e498ec.1c79d8",
+        "command": "sh /home/pi/gps2hz_38400.sh",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 1030,
+        "y": 1040,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "fb0dc303.db899",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 780,
+        "y": 800,
+        "wires": [
+            [
+                "338ca686.b6300a"
+            ]
+        ]
+    },
+    {
+        "id": "338ca686.b6300a",
+        "type": "exec",
+        "z": "a4e498ec.1c79d8",
+        "command": "gpsctl -c 0.2 /dev/ttyS0",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 1000,
+        "y": 800,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "d575c9ad.e15588",
+        "type": "status",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "scope": null,
+        "x": 750,
+        "y": 520,
+        "wires": [
+            [
+                "8f97a327.3c4f2"
+            ]
+        ]
+    },
+    {
+        "id": "9cebe79d.37be68",
+        "type": "exec",
+        "z": "a4e498ec.1c79d8",
+        "command": "echo -e \"\\$PMTK286,0*22\\r\\n\" > /dev/ttyS0",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "AIC無効",
+        "x": 1020,
+        "y": 1100,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "809d6d36.7c7c2",
+        "type": "change",
+        "z": "a4e498ec.1c79d8",
+        "name": "データ調整",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "payload.class",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload.device",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload.ept",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload.epv",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload.eps",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload.epc",
+                "pt": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.time",
+                "pt": "msg",
+                "to": "$toMillis(payload.time)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.epx",
+                "pt": "msg",
+                "to": "$floor(payload.epx)\t",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.epy",
+                "pt": "msg",
+                "to": "$floor(payload.epy)\t",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload._type",
+                "pt": "msg",
+                "to": "location",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.tid",
+                "pt": "msg",
+                "to": "pi",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.tst",
+                "pt": "msg",
+                "to": "$floor(payload.time/1000)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.prns",
+                "pt": "msg",
+                "to": "prns",
+                "tot": "flow"
+            },
+            {
+                "t": "set",
+                "p": "time",
+                "pt": "global",
+                "to": "payload.time",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 140,
+        "wires": [
+            [
+                "505035f0.025fac",
+                "c0b7f0d18eb6347f"
+            ]
+        ]
+    },
+    {
+        "id": "646a8b96.541964",
+        "type": "debug",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1750,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "74c9180d.3c4e68",
+        "type": "exec",
+        "z": "a4e498ec.1c79d8",
+        "command": "node-red-restart",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 360,
+        "y": 740,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "79c04857.338d18",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 740,
+        "wires": [
+            [
+                "74c9180d.3c4e68"
+            ]
+        ]
+    },
+    {
+        "id": "6db77c74.690b84",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 660,
+        "wires": [
+            [
+                "52cbae52.5c7aa"
+            ]
+        ]
+    },
+    {
+        "id": "52cbae52.5c7aa",
+        "type": "exec",
+        "z": "a4e498ec.1c79d8",
+        "command": "sh /home/pi/gps4hz_57600.sh",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 410,
+        "y": 660,
+        "wires": [
+            [],
+            [
+                "fd4c8a23.d0a588"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "88723a67.8cc308",
+        "type": "exec",
+        "z": "a4e498ec.1c79d8",
+        "command": "gpsctl -c 0.25 /dev/ttyS0",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "gpsd 4hz ttyS0",
+        "x": 1020,
+        "y": 1160,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "5a70d296.8eeb3c",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "3",
+        "topic": "",
+        "payloadType": "date",
+        "x": 840,
+        "y": 320,
+        "wires": [
+            [
+                "10ca25de34ce3780"
+            ]
+        ]
+    },
+    {
+        "id": "816d9e4f.c6845",
+        "type": "exec",
+        "z": "a4e498ec.1c79d8",
+        "command": "gpsctl -c 1 /dev/ttyS0",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 1000,
+        "y": 920,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "46fac9e.d689a38",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 780,
+        "y": 920,
+        "wires": [
+            [
+                "816d9e4f.c6845"
+            ]
+        ]
+    },
+    {
+        "id": "35a53949.214336",
+        "type": "mqtt out",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "topic": "address",
+        "qos": "",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a298579ae5a0791d",
+        "x": 500,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "e1aad65.816b528",
+        "type": "mqtt in",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "topic": "rec-ip",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "a298579ae5a0791d",
+        "nl": false,
+        "rap": false,
+        "x": 90,
+        "y": 1080,
+        "wires": [
+            [
+                "2c16187c.484288"
+            ]
+        ]
+    },
+    {
+        "id": "d333d9cf.40c0f8",
+        "type": "exec",
+        "z": "a4e498ec.1c79d8",
+        "command": "cat /etc/rc.local",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 410,
+        "y": 1600,
+        "wires": [
+            [
+                "90465491.972d48"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "feeb4b0d.23ce78",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 1600,
+        "wires": [
+            [
+                "d333d9cf.40c0f8"
+            ]
+        ]
+    },
+    {
+        "id": "90465491.972d48",
+        "type": "debug",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "ec9c9e15.757e6",
+        "type": "exec",
+        "z": "a4e498ec.1c79d8",
+        "command": "sudo sh /home/pi/gpsd_restart.sh",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "gpsd restart",
+        "x": 1510,
+        "y": 200,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "11192845.c96fd8",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 1320,
+        "y": 260,
+        "wires": [
+            [
+                "ec9c9e15.757e6"
+            ]
+        ]
+    },
+    {
+        "id": "3ea4a7a7.71f5f8",
+        "type": "mqtt out",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "topic": "ping",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a298579ae5a0791d",
+        "x": 530,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "33527703.252918",
+        "type": "switch",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "false"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 330,
+        "y": 1240,
+        "wires": [
+            [],
+            [
+                "3ea4a7a7.71f5f8"
+            ]
+        ]
+    },
+    {
+        "id": "adac36f6.aea8b8",
+        "type": "mqtt in",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "topic": "gpsd-rs",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "a298579ae5a0791d",
+        "nl": false,
+        "rap": false,
+        "x": 1290,
+        "y": 220,
+        "wires": [
+            [
+                "ec9c9e15.757e6"
+            ]
+        ]
+    },
+    {
+        "id": "4f438030.22b62",
+        "type": "debug",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 270,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "213e0e8c.f22542",
+        "type": "rbe",
+        "z": "a4e498ec.1c79d8",
+        "name": "重複削除",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload.time",
+        "x": 1560,
+        "y": 120,
+        "wires": [
+            [
+                "3435817a.ae655e",
+                "646a8b96.541964",
+                "585be802.af3238",
+                "32a88bd2325b219f"
+            ]
+        ]
+    },
+    {
+        "id": "14ce5606.90224a",
+        "type": "rbe",
+        "z": "a4e498ec.1c79d8",
+        "name": "GPSD1Hz？",
+        "func": "deadbandEq",
+        "gap": "750",
+        "start": "",
+        "inout": "in",
+        "septopics": true,
+        "property": "payload.time",
+        "x": 830,
+        "y": 200,
+        "wires": [
+            [
+                "53cdbc96.0fdd94"
+            ]
+        ]
+    },
+    {
+        "id": "3436e9fb.444fb6",
+        "type": "switch",
+        "z": "a4e498ec.1c79d8",
+        "name": "track null?",
+        "property": "payload.track",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            },
+            {
+                "t": "empty"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 1190,
+        "y": 140,
+        "wires": [
+            [
+                "b7361e717d75dfa6"
+            ],
+            [
+                "ec9c9e15.757e6"
+            ]
+        ]
+    },
+    {
+        "id": "7d193a4f.58bc14",
+        "type": "exec",
+        "z": "a4e498ec.1c79d8",
+        "command": "sh /home/pi/coldstart.sh",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "コールドスタート",
+        "x": 370,
+        "y": 600,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b74f4441.e37638",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 600,
+        "wires": [
+            [
+                "7d193a4f.58bc14"
+            ]
+        ]
+    },
+    {
+        "id": "8f97a327.3c4f2",
+        "type": "change",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "status.text",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 520,
+        "wires": [
+            [
+                "22623125.5f8cde",
+                "54711ae3.25de24"
+            ]
+        ]
+    },
+    {
+        "id": "22623125.5f8cde",
+        "type": "debug",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1110,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "54711ae3.25de24",
+        "type": "mqtt out",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "topic": "status",
+        "qos": "2",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a298579ae5a0791d",
+        "x": 1090,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "53cdbc96.0fdd94",
+        "type": "delay",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "10",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "x": 840,
+        "y": 260,
+        "wires": [
+            [
+                "10ca25de34ce3780"
+            ]
+        ]
+    },
+    {
+        "id": "fad78bb9.863788",
+        "type": "mqtt in",
+        "z": "a4e498ec.1c79d8",
+        "name": "shutdown",
+        "topic": "shutdown",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "a298579ae5a0791d",
+        "nl": false,
+        "rap": false,
+        "x": 100,
+        "y": 840,
+        "wires": [
+            [
+                "8c09c10c.40467"
+            ]
+        ]
+    },
+    {
+        "id": "2164b3ed.1b19ac",
+        "type": "mqtt in",
+        "z": "a4e498ec.1c79d8",
+        "name": "reboot",
+        "topic": "reboot",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "a298579ae5a0791d",
+        "nl": false,
+        "rap": false,
+        "x": 90,
+        "y": 960,
+        "wires": [
+            [
+                "2fdc8215.c7659e"
+            ]
+        ]
+    },
+    {
+        "id": "fd4c8a23.d0a588",
+        "type": "debug",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "505035f0.025fac",
+        "type": "debug",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "81022a88.623d28",
+        "type": "function",
+        "z": "a4e498ec.1c79d8",
+        "name": "受信間隔",
+        "func": "date = new Date();\ntime=Date.now(date)\nmsg.payload=time-pre_time;\npre_time=time;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// ここに記述したコードは、ノードをデプロイした時に\n// 一度だけ実行されます。\npre_time=0",
+        "finalize": "",
+        "x": 580,
+        "y": 80,
+        "wires": [
+            [
+                "2230577.8ca70a8"
+            ]
+        ]
+    },
+    {
+        "id": "2230577.8ca70a8",
+        "type": "debug",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "585be802.af3238",
+        "type": "function",
+        "z": "a4e498ec.1c79d8",
+        "name": "送信間隔",
+        "func": "date = new Date();\ntime=Date.now(date)\nmsg.payload=time-pre_time;\npre_time=time;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// ここに記述したコードは、ノードをデプロイした時に\n// 一度だけ実行されます。\npre_time=0",
+        "finalize": "",
+        "x": 1740,
+        "y": 20,
+        "wires": [
+            [
+                "841db4cc.6dd7c8"
+            ]
+        ]
+    },
+    {
+        "id": "841db4cc.6dd7c8",
+        "type": "debug",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1910,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "b74fe7a4.574848",
+        "type": "comment",
+        "z": "a4e498ec.1c79d8",
+        "name": "gps4hz_38400.sh",
+        "info": "#!/bin/sh\necho -e \"\\$PMTK220,250*29\\r\\n\" > /dev/ttyS0\necho -e \"\\$PMTK300,250,0,0,0,0*35\\r\\n\" > /dev/ttyS0\necho -e \"\\$PMTK251,38400*27\\r\\n\" > /dev/ttyS0\nstty -F /dev/ttyS0 38400",
+        "x": 750,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "fa7d5e0b.d2b01",
+        "type": "comment",
+        "z": "a4e498ec.1c79d8",
+        "name": "sudo nano /etc/rc.local",
+        "info": "echo -e \"\\$PMTK300,250,0,0,0,0*35\\r\\n\" > /dev/ttyS0\necho -e \"\\$PMTK251,38400*27\\r\\n\" > /dev/ttyS0\nstty -F /dev/ttyS0 38400",
+        "x": 760,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "1e557f7e.6bbef1",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 810,
+        "y": 1260,
+        "wires": [
+            [
+                "42e036aa.c437c8"
+            ]
+        ]
+    },
+    {
+        "id": "9800b319.3c2ab",
+        "type": "comment",
+        "z": "a4e498ec.1c79d8",
+        "name": "gpsd_restart.sh",
+        "info": "#!/bin/sh\nsudo service gpsd stop\nsleep 10\necho -e \"\\$PMTK300,250,0,0,0,0*35\\r\\n\" > /dev/ttyS0\necho -e \"\\$PMTK251,38400*27\\r\\n\" > /dev/ttyS0\nstty -F /dev/ttyS0 38400\n#gpsctl -c 0.25 /dev/ttyS0\nsudo service gpsd start",
+        "x": 1540,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "42e036aa.c437c8",
+        "type": "exec",
+        "z": "a4e498ec.1c79d8",
+        "command": "sh /home/pi/gps4hz_57600.sh",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 1070,
+        "y": 1260,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "1c2076e6.0442c9",
+        "type": "comment",
+        "z": "a4e498ec.1c79d8",
+        "name": "gps4hz_57600.sh",
+        "info": "#!/bin/sh\necho -e \"\\$PMTK220,250*29\\r\\n\" > /dev/ttyS0\necho -e \"\\$PMTK300,250,0,0,0,0*35\\r\\n\" > /dev/ttyS0\necho -e \"\\$PMTK251,57600*2C\\r\\n\" > /dev/ttyS0\nstty -F /dev/ttyS0 57600",
+        "x": 750,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "5cc1ca1d.dd1c84",
+        "type": "gpsd",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "hostname": "localhost",
+        "port": "2947",
+        "tpv": true,
+        "sky": true,
+        "info": false,
+        "device": false,
+        "gst": false,
+        "att": false,
+        "x": 70,
+        "y": 140,
+        "wires": [
+            [
+                "4f438030.22b62",
+                "1d34e958aaecf072",
+                "e73daa8ab7e39ba4",
+                "718d8a850f626067"
+            ]
+        ]
+    },
+    {
+        "id": "2c16187c.484288",
+        "type": "ip",
+        "z": "a4e498ec.1c79d8",
+        "name": "ip",
+        "https": false,
+        "timeout": "5000",
+        "internalIPv4": true,
+        "internalIPv6": false,
+        "publicIPv4": true,
+        "publicIPv6": false,
+        "x": 310,
+        "y": 1080,
+        "wires": [
+            [
+                "35a53949.214336",
+                "994163be0b1a37c5",
+                "bc09ef39939fb9cd"
+            ]
+        ]
+    },
+    {
+        "id": "10ca25de34ce3780",
+        "type": "exec",
+        "z": "a4e498ec.1c79d8",
+        "command": "gpsctl -c 0.25 /dev/ttyUSB0",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "gpsd 4hz ttyUSB0",
+        "x": 1090,
+        "y": 320,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "0c83fe67b19c4c3d",
+        "type": "exec",
+        "z": "a4e498ec.1c79d8",
+        "command": "sudo sh /home/pi/gpsd_start.sh",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 390,
+        "y": 440,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "cb6d69eecb116eb0",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 440,
+        "wires": [
+            [
+                "0c83fe67b19c4c3d"
+            ]
+        ]
+    },
+    {
+        "id": "8f76879ba1d695a4",
+        "type": "mqtt in",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "topic": "restart",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "a298579ae5a0791d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 100,
+        "y": 700,
+        "wires": [
+            [
+                "74c9180d.3c4e68"
+            ]
+        ]
+    },
+    {
+        "id": "c19fe2a7b439d97e",
+        "type": "debug",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "32a88bd2325b219f",
+        "type": "change",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "lat",
+                "pt": "flow",
+                "to": "payload.lat",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "lon",
+                "pt": "flow",
+                "to": "payload.lon",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "track",
+                "pt": "flow",
+                "to": "payload.track",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.command.lat",
+                "pt": "msg",
+                "to": "payload.lat",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.command.lon",
+                "pt": "msg",
+                "to": "payload.lon",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.name",
+                "pt": "msg",
+                "to": "r1",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.icon",
+                "pt": "msg",
+                "to": "arrow",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.bearing",
+                "pt": "msg",
+                "to": "payload.track",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.iconColor",
+                "pt": "msg",
+                "to": "red",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1760,
+        "y": 120,
+        "wires": [
+            [
+                "cf40faaf41608181"
+            ]
+        ]
+    },
+    {
+        "id": "7ccd268ab830487c",
+        "type": "file",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "filename": "/home/pi/Desktop/gps",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 2380,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cf40faaf41608181",
+        "type": "ui_worldmap",
+        "z": "a4e498ec.1c79d8",
+        "group": "194c659a671041ea",
+        "order": 1,
+        "width": 6,
+        "height": 6,
+        "name": "",
+        "lat": "",
+        "lon": "",
+        "zoom": "16",
+        "layer": "OSM grey",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "hide",
+        "layers": "hide",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "true",
+        "coords": "none",
+        "showgrid": "false",
+        "allowFileDrop": "false",
+        "path": "/worldmap",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 1980,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "e9adee66eb5e423a",
+        "type": "function",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "func": "name=msg.payload;\nmsg.payload={\n    lat:flow.get(\"lat\"),\n    lon:flow.get(\"lon\"),\n    track:flow.get(\"track\"),\n    name:name,\n    icon:\"circle\"\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1980,
+        "y": 240,
+        "wires": [
+            [
+                "cf40faaf41608181",
+                "303c999ebc6ca14a"
+            ]
+        ]
+    },
+    {
+        "id": "05daf72ce0e5780d",
+        "type": "ui_text_input",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "label": "ポイント名称入力",
+        "tooltip": "",
+        "group": "194c659a671041ea",
+        "order": 7,
+        "width": 8,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 1770,
+        "y": 240,
+        "wires": [
+            [
+                "e9adee66eb5e423a"
+            ]
+        ]
+    },
+    {
+        "id": "303c999ebc6ca14a",
+        "type": "template",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{payload.name}},{{payload.lat}},{{payload.lon}},{{payload.track}}",
+        "output": "str",
+        "x": 2160,
+        "y": 240,
+        "wires": [
+            [
+                "7ccd268ab830487c"
+            ]
+        ]
+    },
+    {
+        "id": "8e4abbdb6d8d4c6a",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "30",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 1160,
+        "wires": [
+            [
+                "2c16187c.484288"
+            ]
+        ]
+    },
+    {
+        "id": "994163be0b1a37c5",
+        "type": "ui_text",
+        "z": "a4e498ec.1c79d8",
+        "group": "194c659a671041ea",
+        "order": 2,
+        "width": 4,
+        "height": 1,
+        "name": "",
+        "label": "Local Access　",
+        "format": "{{msg.payload.internalIPv4}}:1880/ui",
+        "layout": "col-center",
+        "className": "",
+        "x": 510,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "3969b5e4e53ed1f1",
+        "type": "ui_template",
+        "z": "a4e498ec.1c79d8",
+        "group": "194c659a671041ea",
+        "name": "取得座標",
+        "order": 8,
+        "width": 8,
+        "height": 3,
+        "format": "<font size=\"3\"><div ng-bind-html=\"msg.payload\"></div></font>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1960,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "759eb5ce39fc19f9",
+        "type": "file in",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "filename": "/home/pi/Desktop/gps",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 1740,
+        "y": 360,
+        "wires": [
+            [
+                "3969b5e4e53ed1f1"
+            ]
+        ]
+    },
+    {
+        "id": "6dd605e7c8f5c10f",
+        "type": "watch",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "files": "/home/pi/Desktop/gps",
+        "recursive": "",
+        "x": 1500,
+        "y": 360,
+        "wires": [
+            [
+                "759eb5ce39fc19f9"
+            ]
+        ]
+    },
+    {
+        "id": "a68faa3e14b09072",
+        "type": "file",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "filename": "/home/pi/Desktop/gps",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1940,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2ddc93df9b6dd68d",
+        "type": "ui_button",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "group": "f884ebadf98bd57b",
+        "order": 1,
+        "width": 5,
+        "height": 2,
+        "passthru": false,
+        "label": "削除",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1490,
+        "y": 580,
+        "wires": [
+            [
+                "5db4466bde867fba"
+            ]
+        ]
+    },
+    {
+        "id": "5db4466bde867fba",
+        "type": "moment",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "topic": "",
+        "input": "",
+        "inputType": "msg",
+        "inTz": "Asia/Tokyo",
+        "adjAmount": "9",
+        "adjType": "hours",
+        "adjDir": "add",
+        "format": "",
+        "locale": "ja-JP",
+        "output": "",
+        "outputType": "msg",
+        "outTz": "Asia/Tokyo",
+        "x": 1680,
+        "y": 580,
+        "wires": [
+            [
+                "a68faa3e14b09072"
+            ]
+        ]
+    },
+    {
+        "id": "ba6f0871a22581ad",
+        "type": "mqtt out",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "topic": "record",
+        "qos": "2",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a298579ae5a0791d",
+        "x": 1890,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "a724fb2e5db96caa",
+        "type": "file in",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "filename": "/home/pi/Desktop/gps",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 1700,
+        "y": 440,
+        "wires": [
+            [
+                "ba6f0871a22581ad"
+            ]
+        ]
+    },
+    {
+        "id": "55d94425a3afcf07",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1480,
+        "y": 440,
+        "wires": [
+            [
+                "a724fb2e5db96caa"
+            ]
+        ]
+    },
+    {
+        "id": "67ece51cd6ed7075",
+        "type": "mqtt in",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "topic": "record",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "a298579ae5a0791d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 1510,
+        "y": 940,
+        "wires": [
+            [
+                "e2c3df7222c20677"
+            ]
+        ]
+    },
+    {
+        "id": "daa3c2f216e34793",
+        "type": "debug",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2010,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "e2c3df7222c20677",
+        "type": "file",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "filename": "/home/pi/Desktop/record",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1750,
+        "y": 940,
+        "wires": [
+            [
+                "daa3c2f216e34793"
+            ]
+        ]
+    },
+    {
+        "id": "4d42c6adcf0711d7",
+        "type": "ui_button",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "group": "f884ebadf98bd57b",
+        "order": 2,
+        "width": 5,
+        "height": 2,
+        "passthru": false,
+        "label": "送信",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1480,
+        "y": 480,
+        "wires": [
+            [
+                "a724fb2e5db96caa"
+            ]
+        ]
+    },
+    {
+        "id": "b187df5767b3e5da",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 1480,
+        "y": 400,
+        "wires": [
+            [
+                "759eb5ce39fc19f9"
+            ]
+        ]
+    },
+    {
+        "id": "b16e7b1755d7e217",
+        "type": "change",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "date"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2060,
+        "y": 300,
+        "wires": [
+            [
+                "3025caac5f52846d"
+            ]
+        ]
+    },
+    {
+        "id": "08d1bdad18aefbc5",
+        "type": "switch",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1890,
+        "y": 300,
+        "wires": [
+            [
+                "b16e7b1755d7e217"
+            ]
+        ]
+    },
+    {
+        "id": "3025caac5f52846d",
+        "type": "moment",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "topic": "",
+        "input": "",
+        "inputType": "msg",
+        "inTz": "Asia/Tokyo",
+        "adjAmount": "9",
+        "adjType": "hours",
+        "adjDir": "add",
+        "format": "",
+        "locale": "ja-JP",
+        "output": "",
+        "outputType": "msg",
+        "outTz": "Asia/Tokyo",
+        "x": 2310,
+        "y": 300,
+        "wires": [
+            [
+                "e9adee66eb5e423a"
+            ]
+        ]
+    },
+    {
+        "id": "b7361e717d75dfa6",
+        "type": "function",
+        "z": "a4e498ec.1c79d8",
+        "name": "1km/h回転防止",
+        "func": "\nkmh=msg.payload.speed*3.6;\nif(kmh > 1){\n track=msg.payload.track ;   \n}\nmsg.payload.track=track;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// ここに記述したコードは、ノードをデプロイした時に\n// 一度だけ実行されます。\ntrack=0;",
+        "finalize": "",
+        "libs": [],
+        "x": 1380,
+        "y": 120,
+        "wires": [
+            [
+                "213e0e8c.f22542"
+            ]
+        ]
+    },
+    {
+        "id": "d8d7b7e5952028cc",
+        "type": "ui_text",
+        "z": "a4e498ec.1c79d8",
+        "group": "194c659a671041ea",
+        "order": 4,
+        "width": 3,
+        "height": 1,
+        "name": "",
+        "label": "誤差",
+        "format": "{{msg.payload.epx}}/{{msg.payload.epy}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 790,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "51f93a68b99c0e20",
+        "type": "ui_text",
+        "z": "a4e498ec.1c79d8",
+        "group": "194c659a671041ea",
+        "order": 5,
+        "width": 3,
+        "height": 1,
+        "name": "",
+        "label": "秒速",
+        "format": "{{msg.payload.speed}}m/s",
+        "layout": "col-center",
+        "className": "",
+        "x": 790,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "1d34e958aaecf072",
+        "type": "moment",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "topic": "",
+        "input": "payload.time",
+        "inputType": "msg",
+        "inTz": "Asia/Tokyo",
+        "adjAmount": "9",
+        "adjType": "hours",
+        "adjDir": "add",
+        "format": "",
+        "locale": "ja-JP",
+        "output": "",
+        "outputType": "msg",
+        "outTz": "Asia/Tokyo",
+        "x": 300,
+        "y": 20,
+        "wires": [
+            [
+                "34b5596a0e62c62c"
+            ]
+        ]
+    },
+    {
+        "id": "34b5596a0e62c62c",
+        "type": "ui_text",
+        "z": "a4e498ec.1c79d8",
+        "group": "194c659a671041ea",
+        "order": 6,
+        "width": 5,
+        "height": 1,
+        "name": "",
+        "label": "時刻",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 550,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "e5a42049599454b8",
+        "type": "switch",
+        "z": "4a3b0ccfd7115cd5",
+        "name": "class sky",
+        "property": "payload.class",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "SKY",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 200,
+        "y": 80,
+        "wires": [
+            [
+                "2101a31a2539f629"
+            ]
+        ]
+    },
+    {
+        "id": "a7a125f5aa53264f",
+        "type": "split",
+        "z": "4a3b0ccfd7115cd5",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 590,
+        "y": 80,
+        "wires": [
+            [
+                "d628a6932bb528aa"
+            ]
+        ]
+    },
+    {
+        "id": "2101a31a2539f629",
+        "type": "change",
+        "z": "4a3b0ccfd7115cd5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.satellites",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 80,
+        "wires": [
+            [
+                "a7a125f5aa53264f"
+            ]
+        ]
+    },
+    {
+        "id": "d628a6932bb528aa",
+        "type": "switch",
+        "z": "4a3b0ccfd7115cd5",
+        "name": "",
+        "property": "payload.used",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 740,
+        "y": 80,
+        "wires": [
+            [
+                "2c6b8f1f7ef412a1"
+            ]
+        ]
+    },
+    {
+        "id": "2c6b8f1f7ef412a1",
+        "type": "join",
+        "z": "4a3b0ccfd7115cd5",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "parts",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "0.5",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 900,
+        "y": 80,
+        "wires": [
+            [
+                "e59d1806fc384d90"
+            ]
+        ]
+    },
+    {
+        "id": "e59d1806fc384d90",
+        "type": "change",
+        "z": "4a3b0ccfd7115cd5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$count(payload)\t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1090,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "39279923932c6709",
+        "type": "ui_text",
+        "z": "a4e498ec.1c79d8",
+        "group": "194c659a671041ea",
+        "order": 3,
+        "width": 1,
+        "height": 1,
+        "name": "",
+        "label": "PRNs",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 610,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "e73daa8ab7e39ba4",
+        "type": "switch",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "property": "payload.class",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "TPV",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "SKY",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 570,
+        "y": 140,
+        "wires": [
+            [
+                "809d6d36.7c7c2",
+                "d8d7b7e5952028cc",
+                "51f93a68b99c0e20"
+            ],
+            [
+                "854ea3d6dfba45e9"
+            ]
+        ]
+    },
+    {
+        "id": "854ea3d6dfba45e9",
+        "type": "subflow:4a3b0ccfd7115cd5",
+        "z": "a4e498ec.1c79d8",
+        "name": "PRNs",
+        "env": [],
+        "x": 610,
+        "y": 200,
+        "wires": [
+            [
+                "e8135e85ef5b2cbc"
+            ]
+        ]
+    },
+    {
+        "id": "e8135e85ef5b2cbc",
+        "type": "change",
+        "z": "a4e498ec.1c79d8",
+        "name": "prns",
+        "rules": [
+            {
+                "t": "set",
+                "p": "prns",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 260,
+        "wires": [
+            [
+                "39279923932c6709"
+            ]
+        ]
+    },
+    {
+        "id": "c0b7f0d18eb6347f",
+        "type": "switch",
+        "z": "a4e498ec.1c79d8",
+        "name": "epx",
+        "property": "payload.epx",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            },
+            {
+                "t": "null"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 990,
+        "y": 140,
+        "wires": [
+            [
+                "3436e9fb.444fb6"
+            ],
+            [
+                "6b7a4e7516815caa"
+            ]
+        ]
+    },
+    {
+        "id": "6b7a4e7516815caa",
+        "type": "change",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.epx",
+                "pt": "msg",
+                "to": "100",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "payload.epy",
+                "pt": "msg",
+                "to": "100",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1070,
+        "y": 200,
+        "wires": [
+            [
+                "3436e9fb.444fb6"
+            ]
+        ]
+    },
+    {
+        "id": "ec95d6689cecdd07",
+        "type": "ping",
+        "z": "a4e498ec.1c79d8",
+        "protocol": "Automatic",
+        "mode": "timed",
+        "name": "",
+        "host": "a17jm6cbfebqgo-ats.iot.us-west-2.amazonaws.com",
+        "timer": "20",
+        "inputs": 0,
+        "x": 210,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0963fac931a004d7",
+        "type": "exec",
+        "z": "a4e498ec.1c79d8",
+        "command": "node-red-restart",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 740,
+        "y": 1460,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "dd8cd61547cca92d",
+        "type": "ui_button",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "group": "f884ebadf98bd57b",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "NODE-RED再起動",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 450,
+        "y": 1480,
+        "wires": [
+            [
+                "0963fac931a004d7"
+            ]
+        ]
+    },
+    {
+        "id": "bf8439eadf3e1681",
+        "type": "rbe",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 490,
+        "y": 1360,
+        "wires": [
+            [
+                "c19fe2a7b439d97e"
+            ]
+        ]
+    },
+    {
+        "id": "8f1c10d21e287e6b",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 460,
+        "y": 1420,
+        "wires": [
+            [
+                "0963fac931a004d7"
+            ]
+        ]
+    },
+    {
+        "id": "bc09ef39939fb9cd",
+        "type": "change",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "localip",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 1140,
+        "wires": [
+            [
+                "ffdb6d3a.0cb2"
+            ]
+        ]
+    },
+    {
+        "id": "501982fb4dc6d7fe",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "localip.internalIPv4",
+        "payloadType": "flow",
+        "x": 270,
+        "y": 1360,
+        "wires": [
+            [
+                "bf8439eadf3e1681"
+            ]
+        ]
+    },
+    {
+        "id": "09e49455d89a726f",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "15",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 1310,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7b2792fb41af8dc8",
+        "type": "exec",
+        "z": "a4e498ec.1c79d8",
+        "command": "sudo service gpsd restart",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 1730,
+        "y": 820,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "648fba4369a76663",
+        "type": "debug",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1730,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "f7f689c4627ccef7",
+        "type": "switch",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "$globalContext(\"time\")+10000",
+                "vt": "jsonata"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1510,
+        "y": 820,
+        "wires": [
+            [
+                "648fba4369a76663",
+                "7b2792fb41af8dc8"
+            ]
+        ]
+    },
+    {
+        "id": "f3478bc0dbc1516e",
+        "type": "mqtt in",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "topic": "owntracks/GPS/pi",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "b50fbb45.a8d5d8",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 1510,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "718d8a850f626067",
+        "type": "trigger",
+        "z": "a4e498ec.1c79d8",
+        "name": "Watchdog",
+        "op1": "",
+        "op2": "timeout",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "20",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 360,
+        "y": 240,
+        "wires": [
+            [
+                "62c359a84d3d927c",
+                "6106b4fa.0da25c"
+            ]
+        ]
+    },
+    {
+        "id": "59d6e5fd611d7944",
+        "type": "inject",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "30",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "718d8a850f626067"
+            ]
+        ]
+    },
+    {
+        "id": "62c359a84d3d927c",
+        "type": "debug",
+        "z": "a4e498ec.1c79d8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 370,
+        "y": 180,
+        "wires": []
+    }
+]

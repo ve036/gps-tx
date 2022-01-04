@@ -1,1 +1,10 @@
-{}
+{
+    "a298579ae5a0791d": {
+        "user": "nodered",
+        "password": "mosquitto"
+    },
+    "b50fbb45.a8d5d8": {
+        "user": "nodered",
+        "password": "mosquitto"
+    }
+}
